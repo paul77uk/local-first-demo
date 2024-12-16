@@ -51,8 +51,8 @@
 
 <ul>
 	{#each workouts as workout (workout.id)}
-		<li class="my-2 flex items-center gap-2">
-			{workout.title}
+		<li class="my-2 flex items-center gap-2 text-lg">
+			<div class="font-semibold">{workout.title}</div>
 			{workout.description}
 			{workout.id}
 			<button onclick={() => deleteWorkout(workout)} class="rounded border p-1 hover:bg-gray-50"
