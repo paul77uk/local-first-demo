@@ -1,18 +1,10 @@
 <script lang="ts">
-	import { db } from './db';
+	import { db, type Workout } from './db';
 	import ExercisesByWorkoutId from './ExercisesByWorkoutId.svelte';
-
-	type Workout = {
-		id?: number;
-		title: string;
-		description: string;
-	};
 
 	let workoutName = $state('');
 	let workoutDescription = $state('');
 	let workouts: Workout[] = $state([]);
-
-	let workoutId: number | undefined = $state();
 
 	const save = async () => {
 		await db.workouts.add({
